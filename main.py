@@ -16,7 +16,7 @@ app.add_middleware(
 
 @app.get("/data")
 def fetch_news():
-    """API endpoint to fetch all news articles."""
+    """API endpoint to fetch all data."""
     return get_all_news()
 
 

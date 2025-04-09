@@ -1,9 +1,12 @@
 ## Overview
 
-This project comprises two main components:
+This project comprises three main components:
 
-1. **Web Scraper (`scrapper.py`)**: A Python script that extracts data from specified websites.
+1. **Web Scraper (`scrapper.py`)**: A Python script that extracts data from specified website. I have used BeautifulSoup module to scrap data from website (https://www.artificialintelligence-news.com/) and I am storing the data scraped from website to PostgreSQL database.
 2. **API Service (`main.py`)**: Provides endpoints to access the scraped data.
+3. **Database Operations (`database.py`)**: PostgreSQL database is used.
+
+
 
 
 ## Installation
@@ -12,6 +15,7 @@ This project comprises two main components:
 
 - Python 3.6 or higher
 - pip
+- PostgreSQL Database
 
 
 ### Setup Steps
@@ -19,12 +23,12 @@ This project comprises two main components:
 1. **Clone the Repository**:
 
    ```
-   git clone https://github.com/yourusername/your-repo-name.git
+   https://github.com/Megha10-v/AIAChallenge.git
    ```
 
 2. **Navigate to the Project Directory**:
    ```
-   cd your-repo-name
+   cd AIAChallenge/
    ```
 
 3. **Create and Activate a Virtual Environment**:
@@ -42,7 +46,7 @@ This project comprises two main components:
 
 ### Running the web scarpper
 
-To execute the scraper and collect data:
+To execute the scraper and collect data and store it in database:
 ```
 python scrapper.py
 ```
@@ -53,13 +57,17 @@ Launch the API server with:
 ```
 uvicorn main:app --reload
 ```
-The API will be accessible at http://localhost:8000.
+The API will be accessible at http://localhost:8000/docs.
 
 ### API Endpoints
 The API provides the following endpoints:
 
-- GET /data : Retrieve all the data
-- GET /data?query=news : Retrieve the data based on keyword(here news included data is retrieved)
+- GET /data : Retrieve all the data from the tabe
+- GET /search?query=news : Retrieve the data based on keyword(here news included data is retrieved) from the table
   
+
+## Live API Link 
+
+https://aiachallenge-production.up.railway.app/docs
 
 
